@@ -54,7 +54,7 @@ app.get('/search', async (req, res) => {
         params: {page: '1'},
         headers: {
             // API key for authentication
-            'X-RapidAPI-Key': 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c',
+            'X-RapidAPI-Key': APIKey, // Add your API key
             // Host header required by the API
             'X-RapidAPI-Host': 'ebay32.p.rapidapi.com'
         }
