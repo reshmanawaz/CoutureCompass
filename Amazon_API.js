@@ -3,8 +3,8 @@
 // Author: Khaled Alrashidi
 // Date: November 20, 2023
 //
-// Description: A web server that implementats the Amazon Price
-// API. The user sends a query and the server returns results 
+// Description: A web server that implements the Amazon Price
+// API. The user sends a query, and the server returns the results 
 // based on the query.
 //---------------------------
 
@@ -49,7 +49,7 @@ app.get('/search', async (req, res) => {
         },
         headers: {
             // API key for authentication
-            'X-RapidAPI-Key': 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c',
+            'X-RapidAPI-Key': APIKey, // Add your API key
             // Host header required by the API
             'X-RapidAPI-Host': 'amazon-price1.p.rapidapi.com'
         }
