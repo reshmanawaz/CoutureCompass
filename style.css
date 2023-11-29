@@ -4,7 +4,21 @@ body{
     margin: 0;
     padding: 0;
     color:rgb(5, 3, 0);
-    background-color:rgb(242, 236, 227)
+    background-color:rgb(4, 3, 0)
+}
+.bold-text {
+    font-weight: bold;
+}
+.header-center{
+    color:rgb(245, 244, 242);
+}
+
+.background {
+    flex: 2;
+    background-image: url('/banner1.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
 }
 
 header{
@@ -17,7 +31,7 @@ header{
 h1 {
     margin-bottom: 20px;
     text-decoration: dotted;
-    color: rgb(195, 115, 11);
+    color: rgb(194, 159, 113);
 }
 
 nav ul{
@@ -33,35 +47,36 @@ nav ul li{
 }
 nav ul li a {
     text-decoration: none;
-    color:black;
+    color: rgb(194, 159, 113);
 }
 nav.primary{
-    color: black;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: cursive;
+    color: rgb(194, 159, 113);
     text-align: center;
-    padding: 10px;
-}
-
-.italic-text{
-    font-style: italic;
+    padding: auto;
 }
 
 .search-container{
     text-align: center;
-    margin-top: 25px;
+    margin-top: 2px;
+    padding: 18px;
+
 }
 
 .search-box{
     padding: 8px;
     border-radius: 10px;
-    border: 1px solid #ccc;
-    width: 400px;
+    border: 4px solid #ccc;
+    width: 600px;
 }
 
 .search-button{
     padding: 8px 12px;
-    background-color: rgb(174, 92, 9);
+    background-color: rgb(194, 159, 113);
     border: none;
-    color: bisque;
+    color: rgb(7, 7, 6);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -84,16 +99,18 @@ nav.primary{
 .clothing-grid {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    max-width: 900px; 
+    max-width: 1200px; 
     margin: 0 auto; 
 }
 
 .clothing-item {
-    width: calc(25% - 10px); /* Adjust width and margin based on your layout */
+    display: flex;
+    width: 300px; 
+    width: calc(25% - 10px); 
     margin-bottom: 20px;
-    text-align: center;
+    object-fit: 0 auto;
 }
 
 .clothing-item img {
@@ -103,9 +120,31 @@ nav.primary{
     margin-bottom: 10px;
     flex-direction: column;
 }
+.image {
+    display: flex;
+    width: 300px; 
+    height: 200px; 
+    object-fit: cover;
+    margin-right: 10px; 
+}
 
-.clothing-item h3 {
-    margin: 0;
-    font-size: 16px;
+@media (max-width: 1200px) {
+    .image {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .image {
+        width: calc(50% - 10px);
+    }
+}
+
+.dropdownbutton {
+    background-color: #fff;
     color: #333;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
