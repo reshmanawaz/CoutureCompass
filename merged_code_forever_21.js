@@ -8,7 +8,7 @@ const PORT = 8000;
 app.use(cors()); // Add this line
 
 // Forever 21 API key
-const apiKeyForever21 = '72d885e2a7msh05d14642cb60074p19cfbdjsn2ac4751096fd';
+const apiKeyForever21 = 'add_your_Forever_21_API_key';
 
 // Function to format product data received from the API
 function format_product_data(products) {
