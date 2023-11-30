@@ -12,7 +12,8 @@
         <div class="header-center">
             <h1>CoutureCompass</h1>
             <p class="italic-text">Effortlessly Explore and Shop the Latest Trends!</p>
-            <script src="" async defer></script>
+            <script src="project.js" async defer></script>
+            <script src="merged_code_forever_21.js" async defer></script>
         </div>
 
         <div class="top-links">
@@ -51,60 +52,65 @@
             </div>
         </div>
 
-       <script>
-    // Function to make API request and update the UI with results
-    async function searchProducts(event) {
-        event.preventDefault(); // Prevent default form submission
-        const searchInput = document.getElementById('searchInput').value;
+        <script>
+        // Function to make API request and update the UI with results
+        async function searchProducts(event) {
+            event.preventDefault(); // Prevent default form submission
+            const searchInput = document.getElementById('searchInput').value;
 
-        try {
-            const response = await fetch(`http://localhost:8000/search?keywords=${encodeURIComponent(searchInput)}`);
-            const data = await response.json();
+            try {
+                const response = await fetch(`http://localhost:8000/search?keywords=${encodeURIComponent(searchInput)}`);
+                const data = await response.json();
 
-            // Update UI with the data
-            displayClothingItems(data);
-        } catch (error) {
-            console.error(error);
+                // Update UI with the data
+                displayClothingItems(data);
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
 
-    // Function to dynamically create and display clothing items
-    function displayClothingItems(data) {
-        const clothingGrid = document.getElementById('clothingGrid');
-        clothingGrid.innerHTML = ''; // Clear previous content
+        // Function to dynamically create and display clothing items
+        function displayClothingItems(data) {
+            const clothingGrid = document.getElementById('clothingGrid');
+            clothingGrid.innerHTML = ''; // Clear previous content
 
-        data.forEach(item => {
-            const clothingItem = document.createElement('div');
-            clothingItem.classList.add('clothing-item');
+            data.forEach(item => {
+                const clothingItem = document.createElement('div');
+                clothingItem.classList.add('clothing-item');
 
-            // Create a hyperlink for the image
-            const imgLink = document.createElement('a');
-            imgLink.href = item.url;
-            imgLink.target = '_blank'; // Open the link in a new tab
-            const img = document.createElement('img');
-            img.src = item.thumb_image;
-            img.alt = item.title;
-            imgLink.appendChild(img);
+                // Create a hyperlink for the image
+                const imgLink = document.createElement('a');
+                imgLink.href = item.url;
+                imgLink.target = '_blank'; // Open the link in a new tab
+                const img = document.createElement('img');
+                img.src = item.thumb_image;
+                img.alt = item.title;
+                imgLink.appendChild(img);
 
-            // Create a paragraph for the title
-            const titleParagraph = document.createElement('p');
-            titleParagraph.textContent = item.title;
+                // Create a paragraph for the title
+                const titleParagraph = document.createElement('p');
+                titleParagraph.textContent = item.title;
 
-            // Create a paragraph for the sale price
-            const priceParagraph = document.createElement('p');
-            priceParagraph.textContent = `Price: ${item.sale_price}`;
+                // Create a paragraph for the sale price
+                const priceParagraph = document.createElement('p');
+                priceParagraph.textContent = `Price: ${item.sale_price}`;
 
-            clothingItem.appendChild(imgLink);
-            clothingItem.appendChild(titleParagraph);
-            clothingItem.appendChild(priceParagraph);
+                // Optionally, display the source (Amazon, eBay, or Forever21)
+                const sourceParagraph = document.createElement('p');
+                sourceParagraph.textContent = `Source: ${item.source}`;
 
-            clothingGrid.appendChild(clothingItem);
-        });
-    }
+                clothingItem.appendChild(imgLink);
+                clothingItem.appendChild(titleParagraph);
+                clothingItem.appendChild(priceParagraph);
+                clothingItem.appendChild(sourceParagraph);
 
-    // Add event listener for form submission
-    document.getElementById('searchForm').addEventListener('submit', searchProducts);
-</script>
+                clothingGrid.appendChild(clothingItem);
+            });
+        }
+
+        // Add event listener for form submission
+        document.getElementById('searchForm').addEventListener('submit', searchProducts);
+        </script>
     </main>
 </body>
 </html>

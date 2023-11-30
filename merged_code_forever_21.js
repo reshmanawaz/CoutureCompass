@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors'); // Add this line
+const path = require('path');
 const axios = require('axios');
 const app = express();
 const PORT = 8000;
@@ -57,6 +58,10 @@ app.get('/search', async (req, res) => {
         console.error(error);
         res.status(500).send('Error fetching data from Forever21 API');
     }
+});
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'modified_index.html'))
 });
 
 // Start the server

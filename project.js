@@ -15,9 +15,10 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const path = require('path');
 
 
-const app = express();
+const app = express(); 
 
 // Enable CORS
 app.use(cors());
@@ -158,6 +159,11 @@ app.get('/search', async (req, res) => {
         console.error(error);
         res.status(500).send('Error fetching data from APIs');
     }
+});
+
+//display initial when users visit the root URL
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'modified_index.html'))
 });
 
 app.listen(PORT, () => {
