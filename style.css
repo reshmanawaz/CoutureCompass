@@ -99,7 +99,7 @@ nav.primary{
 .clothing-grid {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     max-width: 1200px; 
     margin: 0 auto; 
