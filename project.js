@@ -1,6 +1,5 @@
 //---------------------------
 // Project: CoutureCompass
-// Author: Khaled Alrashidi
 // Date: November 29, 2023
 //
 // Description: A web server that implements the Amazon Price
@@ -8,9 +7,9 @@
 // from the APIs and returns them to the user (web application) 
 //---------------------------
 
-// const ebay_api_key = 'Your__API_Key_Here';
-// const forever21_api_key = 'Your__API_Key_Here';
-// const eBaamazon_api_keyy_API_key = 'Your__API_Key_Here';
+const ebay_api_key = 'ADD_API_KEY';
+const forever21_api_key = 'ADD_API_KEY';
+const amazon_api_key = 'ADD_API_KEY';
 
 const express = require('express');
 const axios = require('axios');
