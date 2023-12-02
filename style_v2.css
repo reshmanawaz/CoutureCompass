@@ -88,24 +88,32 @@ nav.primary{
     font-style: normal;
 }
 
+
 .top-links a {
-    margin-left: 5px;
+    margin-left: 50px;
     text-decoration: none;
     color: black;
-    
+    font-weight: bold;
+    display: block;
+}
+
+.top-links {
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-left: 50px;
 }
 
 .clothing-grid {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     max-width: 1200px; 
     margin: 0 auto; 
 }
 
 .clothing-item {
-    display: flex;
+    display: 50px;
     width: 300px; 
     width: calc(25% - 10px); 
     margin-bottom: 20px;
