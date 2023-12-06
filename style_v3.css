@@ -1,0 +1,161 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    color:rgb(5, 3, 0);
+    background-color:rgb(4, 3, 0)
+}
+
+.header-center{
+    color:rgb(245, 244, 242);
+}
+
+.background {
+    flex: 2;
+    background-image: url('./banner1.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+header{
+    font-family: cursive;
+    font-size: 20px;
+    padding: 0px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-decoration: dotted;
+    color: rgb(194, 159, 113);
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 2px;
+    display: flex; 
+    justify-content: center;
+}
+
+nav ul li{
+    margin-right: 150px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: rgb(194, 159, 113);
+}
+
+nav.primary{
+    margin-right: auto;
+    font-size: 20px;
+    font-family: cursive;
+    color: rgb(194, 159, 113);
+    text-align: center;
+    padding: auto;
+}
+
+.search-container{
+    text-align: center;
+    margin-top: 2px;
+    padding: 18px;
+
+}
+
+.search-box{
+    padding: 8px;
+    border-radius: 10px;
+    border: 4px solid #ccc;
+    width: 600px;
+}
+
+.search-button{
+    padding: 8px 12px;
+    background-color: rgb(194, 159, 113);
+    border: none;
+    color: rgb(7, 7, 6);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.top-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 17px;
+    font-style: normal;
+}
+
+
+.top-links a {
+    margin-left: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+}
+
+.top-links {
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.clothing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.clothing-item {
+    display: 50px;
+    width: 300px; 
+    width: calc(25% - 10px); 
+    margin-bottom: 20px;
+    object-fit: 0 auto;
+}
+
+.clothing-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.image {
+    display: flex;
+    width: 300px; 
+    height: 200px; 
+    object-fit: cover;
+    margin-right: 10px; 
+}
+
+/* Add this CSS to your existing style_v2.css or in a style tag in the head of your HTML */
+.sort-options-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.sort-options {
+    display: inline-block;
+}
+
+
+@media (max-width: 1200px) {
+    .image {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .image {
+        width: calc(50% - 10px);
+    }
+}
+
