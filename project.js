@@ -169,7 +169,7 @@ app.get('/search', async (req, res) => {
 
 //display initial when users visit the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'modified_index_v3.html'))
+    res.sendFile(path.join(__dirname, 'modified_index_v4.html'))
 });
 
 app.listen(PORT, () => {
