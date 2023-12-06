@@ -136,10 +136,10 @@ nav.primary{
     margin-right: 10px; 
 }
 
-/* Add this CSS to your existing style_v2.css or in a style tag in the head of your HTML */
+
 .sort-options-container {
     text-align: center;
-    margin-top: 20px; /* Adjust the margin-top as needed */
+    margin-top: 20px; 
 }
 
 .sort-options {
