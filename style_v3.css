@@ -113,9 +113,10 @@ nav.primary{
 }
 
 .clothing-item {
-    display: 50px;
+    display: flex;
     width: 300px; 
     width: calc(25% - 10px); 
+    margin-top: 20px;
     margin-bottom: 20px;
     object-fit: 0 auto;
 }
@@ -136,10 +137,10 @@ nav.primary{
     margin-right: 10px; 
 }
 
-
 .sort-options-container {
     text-align: center;
     margin-top: 20px; 
+    color: white;
 }
 
 .sort-options {
