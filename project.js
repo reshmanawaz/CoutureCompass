@@ -7,9 +7,9 @@
 // from the APIs and returns them to the user (web application) 
 //---------------------------
 
-const ebay_api_key = 'ADD_API_KEY';
-const forever21_api_key = 'ADD_API_KEY';
-const amazon_api_key = 'ADD_API_KEY';
+const ebay_api_key = '72d885e2a7msh05d14642cb60074p19cfbdjsn2ac4751096fd';
+const forever21_api_key = '72d885e2a7msh05d14642cb60074p19cfbdjsn2ac4751096fd';
+const amazon_api_key = '72d885e2a7msh05d14642cb60074p19cfbdjsn2ac4751096fd';
 
 const express = require('express');
 const axios = require('axios');
@@ -50,12 +50,13 @@ function format_amazon_product_data(products) {
         return {
             source: 'Amazon',
             title: product.title,
-            sale_price: product.price,
+            sale_price: parseFloat(product.price.replace(/[^\d.]/g, '')), // Remove non-numeric characters
             thumb_image: product.imageUrl,
             url: product.detailPageURL
         };
     });
 }
+
 
 // Function to format product data received from eBay API
 function format_ebay_product_data(products) {
@@ -152,7 +153,13 @@ app.get('/search', async (req, res) => {
         const ebayData = format_ebay_product_data(ebayResponse.data);
         const forever21Data = format_forever21_product_data(forever21Response.data);
 
+        // Combine results from all sources
         const combinedResults = [...amazonData, ...ebayData, ...forever21Data];
+
+        // Sort the combined results by sale_price (ascending order)
+        combinedResults.sort((a, b) => parseFloat(a.sale_price) - parseFloat(b.sale_price));
+
+
         res.json(combinedResults);
     } catch (error) {
         console.error(error);
@@ -162,7 +169,7 @@ app.get('/search', async (req, res) => {
 
 //display initial when users visit the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'modified_index.html'))
+    res.sendFile(path.join(__dirname, 'modified_index_v3.html'))
 });
 
 app.listen(PORT, () => {
