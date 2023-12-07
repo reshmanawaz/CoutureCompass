@@ -60,7 +60,7 @@ function format_amazon_product_data(products) {
 
         // If there's no price, set a fallback message
         if (!displayPrice) {
-            displayPrice = 'Price not available';
+            displayPrice = 'Product is on sale';
         }
 
         return {
