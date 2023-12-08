@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Sign In</title>
+<link rel="stylesheet" href="style.css"> 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 95%;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.about-content {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+    line-height: 2.0;
+    color: black;
+}
+
+.signin {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signin input[type="text"],
+.signin input[type="password"],
+.signin input[type="submit"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signin input[type="email"] {
+    width: 80%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signin input[type="submit"] {
+    background-color: #007bff;
+    margin-top: 20px;
+    color: #fff;
+    cursor: pointer;
+    width: calc(100%);
+    
+}
+</style>
+
+</head>
+<body>
+    <div class="top-links">
+        <a href="./index.html">Home</a>
+    </div>
+    
+    <div class="container">
+        <h1>Sign In</h1>
+        <div class="about-content">
+            <div class="signin">
+                <form action="/signin" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <label<a href="#">Forgot Password?</a></label>
+                    <input type="submit" value="Sign In">
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
