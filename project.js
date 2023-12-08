@@ -9,13 +9,13 @@
 //---------------------------
 
 // Amazon Price API key
-const amazon_api_key = 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c'
+const amazon_api_key = 'API_key'
 // Forever 21 API key
-const forever21_api_key = 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c';
+const forever21_api_key = 'API_key';
 // eBay API key
-const ebay_api_key = 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c';
+const ebay_api_key = 'API_key';
 // AliExpress API key
-const aliexpress_api_key = 'f71e874dc2mshbcf4e48afa27552p110a42jsn2c8caf412b0c';
+const aliexpress_api_key = 'API_key';
 
 const express = require('express');
 const axios = require('axios');
