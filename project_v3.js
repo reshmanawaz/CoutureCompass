@@ -57,7 +57,6 @@ function format_amazon_product_data(products) {
     return products.map(product => {
         // Determine the price to display
         let displayPrice = product.price ? product.price : product.listPrice;
-        console.log(product)
 
         // If there's no price, set a fallback message
         if (!displayPrice) {
@@ -198,30 +197,12 @@ app.get('/search', async (req, res) => {
 
         const combinedResults = [...amazonData, ...ebayData, ...forever21Data, ...aliexpressData];
 
-        // Sort the combined results by sale_price (ascending order)
-        combinedResults.sort((a, b) => parseFloat(a.sale_price) - parseFloat(b.sale_price));
-
         res.json(combinedResults);
     } catch (error) {
         console.error(error);
         res.status(500).send('Error fetching data from APIs');
     }
 
-//     try {
-//         const [forever21Response, ebayResponse] = await Promise.all([
-//             axios.request(forever21Request),
-//             axios.request(ebayRequest)
-//         ]);
-
-//         const forever21Data = format_forever21_product_data(forever21Response.data);
-//         const ebayData = format_ebay_product_data(ebayResponse.data, keywords);
-
-//         const combinedResults = [...forever21Data, ...ebayData];
-//         res.json(combinedResults);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Error fetching data from APIs');
-//     }
 });
 
 app.listen(PORT, () => {
